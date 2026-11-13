@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Invitation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Invitation -->
+    <section id="invitation">
+    <!-- Decorative corners -->
+    <span class="corner bottom-left">❤︎</span>
+    <span class="corner bottom-right">❤︎</span>
+
+    <!-- Invitation content -->
+
+    <p class="small-heading">Together with their families</p>
+
+    <h1> Ali & Sana</h1>
+    <div class="couple-photo">
+    <img src="images/sample-couple.jpg" alt="Wedding couple illustration">
+</div>
+
+    <div class="divider">
+        <span>✦</span>
+        <span>❤︎</span>
+        <span>✦</span>
+    </div>
+
+    <h2>Request the pleasure<br>of your company</h2>
+
+    <p>At their wedding celebration</p>
+
+    <p class="wedding-date">DECEMBER 27, 2026</p>
+
+</section>
+
+    <!-- Countdown -->
+    <section id="countdown">
+
+    <p class="small-heading">The celebration begins in</p>
+
+    <h2>Count Down</h2>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <span id="days">47</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- Wedding Details -->
+<section id="details">
+
+    <p class="small-heading">A day to remember</p>
+
+    <h2>Walima Celebration</h2>
+
+    <div class="details-card">
+
+        <p class="event-date">27 DECEMBER 2026</p>
+        <p class="event-day">SUNDAY</p>
+           <div class="details-divider">✦</div>    
+           
+<div class="event-timeline">
+
+    <div class="timeline-item">
+        <span class="timeline-icon">♧</span>
+        <div>
+            <h4>Guest Arrival</h4>
+            <p>02:00 PM</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <span class="timeline-icon">✦</span>
+        <div>
+            <h4>Lunch</h4>
+            <p>03:00 PM</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <span class="timeline-icon">♡</span>
+        <div>
+            <h4>Departure</h4>
+            <p>05:00 PM</p>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- Venue Details -->
+<section id="venue">
+    <!-- RSVP Section -->
+<section id="rsvp">
+
+    <p class="small-heading">Kindly respond</p>
+
+    <h2>Will You Join Us?</h2>
+
+    <form id="rsvpForm">
+
+        <input
+            type="text"
+            id="guestName"
+            placeholder="Your Full Name"
+            required
+        >
+
+        <select id="attendance" required>
+            <option value="">Will you attend?</option>
+            <option value="Yes">Joyfully Accept</option>
+            <option value="No">Regretfully Decline</option>
+        </select>
+
+        <select id="guestCount">
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6">6 Guests</option>
+        </select>
+
+        <button type="submit">Send</button>
+
+    </form>
+
+    <p id="rsvpMessage"></p>
+
+</section>
+
+    <p class="small-heading">Join us at</p>
+
+    <h2>The Wedding Venue</h2>
+
+<div class="venue-card"></div>
+
+    <h3>Prince Hall</h3>
+
+    <p>Gulberg, Lahore, Pakistan</p>
+
+
+    <!-- Embedded Google Map -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108817.10101254788!2d74.24804710470441!3d31.536945324555713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190463c704db23%3A0x5775843ee84f7a8!2sPrince%20Hall!5e0!3m2!1sen!2s!4v1794385954106!5m2!1sen!2s"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+
+    <p class="venue-note">
+        All details are fake. Created by @hafizasania30
+    </p>
+
+</section>
+
+    <!-- Envelope -->
+   
+<!-- Animated Envelope -->
+<section id="envelope">
+
+    <div class="envelope-card">
+
+        <!-- Envelope flap -->
+        <div class="envelope-flap"></div>
+
+        <!-- Envelope front -->
+        <div class="envelope-pocket"></div>
+
+        <!-- Wax seal button -->
+        <button class="wax-seal" id="openInvitation">
+            A & S
+        </button>
+
+    </div>
+
+    <p class="envelope-message">
+        A special invitation awaits you
+    </p>
+
+    <p class="envelope-instruction">
+        CLICK THE SEAL TO OPEN
+    </p>
+</section>
+<!-- Background Music -->
+
+
+<!-- Background Music -->
+
+<audio id="weddingMusic" loop>
+    <source src="audio/wedding-music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-button">♫</button>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1106 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* 1. Basic website settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f0e9;
+    color: #594638;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+}
+
+
+/* 2. Main invitation cover */
+
+#invitation {
+    min-height: 90vh;
+    max-width: 430px;
+    margin: 25px auto;
+    padding: 80px 25px;
+
+    background:
+        radial-gradient(circle at top left, #f2dfd5, transparent 45%),
+        linear-gradient(145deg, #fffaf3, #f5e8df);
+
+    border: 2px solid #b99a70;
+    outline: 1px solid #b99a70;
+    outline-offset: -9px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* 3. Couple's names */
+
+#invitation h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    font-weight: 400;
+    color: #806044;
+    margin: 30px 0;
+}
+
+
+/* 4. Invitation text */
+
+#invitation p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #786453;
+    margin: 10px 0;
+}
+
+#invitation h2 {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 20px 0;
+    color: #9b7957;
+}
+
+
+/* 5. Other website sections */
+
+    
+#countdown,
+#details,
+#venue,
+#envelope {
+    max-width: 430px;
+    min-height: 400px;
+    margin: 25px auto;
+    padding: 60px 25px;
+
+    background-color: #fffaf5;
+
+    /* Double gold border */
+    border: 2px solid #b99a70;
+    outline: 1px solid #b99a70;
+    outline-offset: -9px;
+
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* 6. Section headings */
+
+#countdown h2,
+#details h2,
+#venue h2,
+#envelope h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    font-weight: 400;
+    color: #806044;
+}
+
+
+/* 7. Mobile responsiveness */
+
+@media (max-width: 480px) {
+
+    #invitation {
+        margin: 10px;
+        min-height: 90vh;
+    }
+
+    #invitation h1 {
+        font-size: 55px;
+    }
+
+    #invitation h2 {
+        font-size: 20px;
+    }
+
+}
+
+
+/* Decorative floral corners */
+
+.corner {
+    position: absolute;
+    font-size: 42px;
+    color: #b99a70;
+}
+
+/* Top corners */
+
+.top-left {
+    top: 15px;
+    left: 18px;
+}
+
+.top-right {
+    top: 15px;
+    right: 18px;
+}
+
+/* Bottom corners */
+
+.bottom-left {
+    bottom: 15px;
+    left: 18px;
+}
+
+.bottom-right {
+    bottom: 15px;
+    right: 18px;
+}
+
+
+/* Decorative divider */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #b99a70;
+    margin: 15px 0;
+}
+
+.divider span:nth-child(2) {
+    font-size: 30px;
+}
+
+
+/* Small introductory heading */
+
+.small-heading {
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Wedding date */
+
+.wedding-date {
+    margin-top: 30px !important;
+    padding: 10px 20px;
+    border-top: 1px solid #b99a70;
+    border-bottom: 1px solid #b99a70;
+    letter-spacing: 3px;
+    font-size: 15px !important;
+}
+
+/* ==========================
+   ANIMATED WEDDING ENVELOPE
+========================== */
+
+#envelope {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+
+    background: #f7f0e9;
+    border: none;
+    outline: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 1s ease,
+                visibility 1s ease;
+}
+
+
+/* Envelope body */
+
+.envelope-card {
+    width: min(320px, 85vw);
+    height: 210px;
+
+    position: relative;
+
+    background: #e8d5c2;
+
+    border: 1px solid #b99a70;
+
+    box-shadow: 0 12px 30px rgba(70, 45, 25, 0.15);
+
+    perspective: 1000px;
+}
+
+
+/* Envelope flap */
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #d8bfa5;
+
+    clip-path: polygon(0 0, 100% 0, 50% 65%);
+
+    transform-origin: top;
+    transform: rotateX(0deg);
+
+    transition: transform 1s ease;
+
+    z-index: 3;
+}
+
+
+/* Envelope front pocket */
+
+.envelope-pocket {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        145deg,
+        #f0dfcf,
+        #ddc4ab
+    );
+
+    clip-path: polygon(
+        0 100%,
+        0 0,
+        50% 58%,
+        100% 0,
+        100% 100%
+    );
+
+    z-index: 2;
+}
+
+
+/* Wax seal */
+
+.wax-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    border: 3px solid #a65b55;
+
+    background: #823e3b;
+    color: #f7e7d2;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+
+    cursor: pointer;
+
+    z-index: 4;
+
+    box-shadow: 0 4px 12px rgba(60, 20, 20, 0.3);
+
+    transition: transform 0.5s ease,
+                opacity 0.5s ease;
+}
+
+
+/* Envelope text */
+
+.envelope-message {
+    margin-top: 35px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #806044;
+}
+
+.envelope-instruction {
+    margin-top: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #9b7957;
+}
+
+
+/* Animation when clicked */
+
+#envelope.opened .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+#envelope.opened .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#envelope.opened .envelope-card {
+    transform: translateY(25px);
+    transition: transform 1s ease;
+}
+
+
+/* Hide the envelope after opening */
+
+#envelope.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+/* COUNTDOWN SECTION */
+
+#countdown {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+#countdown h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #806044;
+    margin: 20px 0 35px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    min-width: 90px;
+}
+
+.time-box span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: #823e3b;
+}
+
+.time-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #806044;
+    text-transform: uppercase;
+}
+/* WEDDING DETAILS */
+
+#details,
+#venue {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+#details h2,
+#venue h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #806044;
+    margin: 20px 0 35px;
+}
+
+.details-card,
+.venue-card {
+    max-width: 450px;
+    margin: auto;
+    padding: 35px 20px;
+    border: 1px solid #c5a477;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.details-card h3,
+.venue-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: #823e3b;
+}
+
+.details-divider {
+    color: #b99a70;
+    margin: 20px;
+}
+
+.event-date {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    color: #806044;
+}
+
+.event-day,
+.event-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    color: #823e3b;
+}
+
+.venue-card p {
+    font-family: 'Montserrat', sans-serif;
+    color: #806044;
+    line-height: 1.8;
+}
+
+.venue-note {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 20px;
+}
+/* RSVP SECTION */
+
+#rsvp {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+#rsvp h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: #806044;
+    margin: 20px 0 35px;
+}
+
+#rsvpForm {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#rsvpForm input,
+#rsvpForm select {
+    padding: 14px;
+    border: 1px solid #c5a477;
+    background: #fffaf5;
+    font-family: 'Montserrat', sans-serif;
+    color: #806044;
+    outline: none;
+}
+
+#rsvpForm button {
+    padding: 14px;
+    background: #823e3b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+
+#rsvpForm button:hover {
+    background: #63302e;
+}
+
+#rsvpMessage {
+    margin-top: 20px;
+    color: #823e3b;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+
+    background: #823e3b;
+    color: white;
+
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition: background 0.3s ease;
+}
+
+.map-button:hover {
+    background: #63302e;
+}
+#venue iframe {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 30px auto;
+    border-radius: 12px;
+    border: 1px solid #c5a477;
+}
+/* MUSIC BUTTON */
+
+.music-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: 1px solid #c5a477;
+
+    background: #823e3b;
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+/* MOBILE TYPOGRAPHY */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .small-heading {
+        font-size: 0.75rem;
+    }
+}
+
+/* PREVENT ENVELOPE FLAP CLIPPING */
+@media (max-width: 600px) {
+    #envelope {
+        overflow: visible;
+    }
+}
+
+/* Mobile envelope flap fix */
+@media (max-width: 600px) {
+
+    .envelope-flap {
+        transform-origin: top center;
+        backface-visibility: visible;
+    }
+
+    #envelope {
+        overflow: visible !important;
+        perspective: 1000px;
+    }
+
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section reveal animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Smooth hover effects */
+button:not(.wax-seal) {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:not(.wax-seal):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Venue card hover */
+.venue-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Gentle floating animation for decorative hearts */
+.corner {
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Gold divider shimmer */
+.divider {
+    position: relative;
+    overflow: hidden;
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    animation: dividerShimmer 3s infinite;
+}
+
+@keyframes dividerShimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* Gentle wax seal glow */
+.wax-seal {
+    animation: sealGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes sealGlow {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(60, 20, 20, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 22px rgba(130, 62, 59, 0.65);
+    }
+}
+
+/* Venue card subtle hover enhancement */
+.venue-card {
+    transform: translateY(0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-7px) scale(1.01);
+    box-shadow: 0 12px 25px rgba(70, 45, 25, 0.15);
+}
+
+/* RSVP button interaction */
+#rsvpForm button {
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#rsvpForm button:hover {
+    background-color: #63302e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(99, 48, 46, 0.25);
+}
+
+#rsvpForm button:active {
+    transform: translateY(0);
+}
+/* Couple Photo */
+.couple-photo {
+    width: 280px;
+    max-width: 85%;
+    margin: 25px auto;
+    padding: 8px;
+    border: 3px solid #c9a45c;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(120, 80, 30, 0.2);
+}
+
+.couple-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 9px;
+}
+
+/* Golden shimmer */
+.couple-photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: photoShimmer 3s infinite;
+}
+
+@keyframes photoShimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Wedding Details Animation */
+
+#details .small-heading,
+#details h2 {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#details.visible .small-heading,
+#details.visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#details.visible h2 {
+    transition-delay: 0.2s;
+}
+
+/* Details card entrance */
+#details .details-card {
+    opacity: 0;
+    transform: scale(0.92) translateY(25px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#details.visible .details-card {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition-delay: 0.4s;
+}
+
+/* Details appear one by one */
+#details .details-card h3,
+#details .details-divider,
+#details .event-date,
+#details .event-day,
+#details .event-time {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#details.visible .details-card h3,
+#details.visible .details-divider,
+#details.visible .event-date,
+#details.visible .event-day,
+#details.visible .event-time {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#details.visible .details-card h3 {
+    transition-delay: 0.8s;
+}
+
+#details.visible .details-divider {
+    transition-delay: 1s;
+}
+
+#details.visible .event-date {
+    transition-delay: 1.2s;
+}
+
+#details.visible .event-day {
+    transition-delay: 1.4s;
+}
+
+#details.visible .event-time:nth-of-type(1) {
+    transition-delay: 1.6s;
+}
+
+#details.visible .event-time:nth-of-type(2) {
+    transition-delay: 1.8s;
+}
+
+#details.visible .event-time:nth-of-type(3) {
+    transition-delay: 2s;
+}
+
+/* Floating card */
+#details.visible .details-card {
+    animation: detailsFloat 4s ease-in-out 2s infinite;
+}
+
+@keyframes detailsFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -5px;
+    }
+}
+
+/* Golden shimmer on Wedding Details divider */
+#details .details-divider {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: linear-gradient(
+        90deg,
+        #a77b32,
+        #f5df9b,
+        #a77b32
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+#details.visible .details-divider {
+    animation: detailsGoldShimmer 2.5s linear infinite;
+}
+
+@keyframes detailsGoldShimmer {
+    0% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+/* Wedding Event Timeline */
+
+.event-timeline {
+    position: relative;
+    width: 85%;
+    max-width: 320px;
+    margin: 30px auto 10px;
+    text-align: left;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+/* Golden connecting line */
+.timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 38px;
+    height: calc(100% - 13px);
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        #c9a45c,
+        #ead9ad
+    );
+}
+
+/* Circular icons */
+.timeline-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c9a45c;
+    border-radius: 50%;
+    color: #a77b32;
+    background: #fffaf0;
+    font-size: 18px;
+    z-index: 1;
+}
+
+/* Event text */
+.timeline-item h4 {
+    margin: 0 0 5px;
+    color: #63302e;
+    font-size: 16px;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #8b7048;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Hover effect */
+.timeline-item {
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(6px);
+}
+
+.timeline-item:hover .timeline-icon {
+    background: #c9a45c;
+    color: white;
+    box-shadow: 0 0 12px rgba(201, 164, 92, 0.5);
+}
+/* Animated golden pulse on timeline icons */
+
+.timeline-icon {
+    position: relative;
+    animation: timelineGlow 2.5s ease-in-out infinite;
+}
+
+.timeline-item:nth-child(2) .timeline-icon {
+    animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(3) .timeline-icon {
+    animation-delay: 1s;
+}
+
+@keyframes timelineGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(201, 164, 92, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(201, 164, 92, 0.55);
+    }
+}
+
+/* RSVP Input Styling */
+
+#rsvpForm input,
+#rsvpForm select {
+    border: 1px solid #d6c29a;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #fffdf8;
+    color: #63302e;
+    transition: all 0.3s ease;
+}
+
+/* Focus animation */
+#rsvpForm input:focus,
+#rsvpForm select:focus {
+    outline: none;
+    border-color: #c9a45c;
+    box-shadow: 0 0 12px rgba(201, 164, 92, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Placeholder styling */
+#rsvpForm input::placeholder {
+    color: #a18d70;
+}
+
+/* Dropdown arrow cursor */
+#rsvpForm select {
+    cursor: pointer;
+}
+
+/* RSVP Form Golden Frame */
+
+#rsvpForm {
+    border: 1px solid #d6bd8b;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(120, 80, 30, 0.08);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+#rsvpForm:hover {
+    border-color: #c9a45c;
+    box-shadow: 0 8px 25px rgba(120, 80, 30, 0.16);
+}
+
+/* RSVP Submit Button Animation */
+
+#rsvpForm button {
+    transition: all 0.3s ease;
+}
+
+#rsvpForm button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(201, 164, 92, 0.35);
+}
+
+#rsvpForm button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* RSVP Form Entrance Animation */
+
+#rsvpForm {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#rsvp.visible #rsvpForm {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hidden { display: none; }
+
+#envelope {
+    min-height: 100vh;   /* fills the screen so nothing else shows */
+}
